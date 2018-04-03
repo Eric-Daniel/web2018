@@ -1,20 +1,44 @@
 <?php
-session_start();
-if(!isset($_POST['submit'])){
-    echo "Something wrong! Check again!";
-    exit;
+//session_start();
+require_once "./functions/admin.php";
+require "./functions/database_functions.php";
+
+//if(isset($_POST['submit'])) {
+//    $username = $_POST['name'];
+//    $password = ($_POST['pass']);
+//    $conn = new db_class();
+//    $login = $conn->login($name,$pass);
+//}
+
+if (isset($_REQUEST['submit'])) {
+    extract($_REQUEST);
+    $conn = new db_class();
+    $login = $conn->login($name, $pass);
+    if ($login) {
+        // Registration Success
+        $_SESSION['name'] = $name;
+        header("Location: admin_movie.php");
+       // header("location:home.php");
+    } else {
+        // Registration Failed
+        echo 'Wrong username or password';
+    }
 }
+//if(!isset($_POST['submit'])){
+//    echo "Something wrong! Check again!";
+//    exit;
+//}
 
 ///
 /// ///
 ///
-$name = trim($_POST['name']);
-$pass = trim($_POST['pass']);
-
-if($name == "" || $pass == ""){
-    $_SESSION['admin'] = true;
-    header("Location: admin_movie.php");
-}
+//$name = trim($_POST['name']);
+//$pass = trim($_POST['pass']);
+//
+//if($name == "" || $pass == ""){
+//    $_SESSION['admin'] = true;
+//    header("Location: admin_movie.php");
+//}
 
 /*
 require_once "./functions/database_functions.php";

@@ -33,7 +33,7 @@ if(isset($_POST["year_selected"]))
     $year_selected = $conn->escape_string($_POST["year_selected"]);
     $query = "
     SELECT * FROM movies 
-    WHERE year LIKE '%".$year_selected."%' 
+    WHERE year LIKE '%".$year_selected."%' AND genre LIKE '%".$genre_selected."%' 
    ";
 }
 else if(isset($_POST["genre_selected"]))
@@ -41,7 +41,7 @@ else if(isset($_POST["genre_selected"]))
     $year_selected = $conn->escape_string($_POST["genre_selected"]);
     $query = "
     SELECT * FROM movies 
-    WHERE genre LIKE '%".$genre_selected."%' 
+    WHERE genre LIKE '%".$genre_selected."%' AND year LIKE '%".$year_selected."%' 
    ";
 }
 else if(isset($_POST["query"]))

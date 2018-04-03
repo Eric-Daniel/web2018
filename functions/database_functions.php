@@ -93,6 +93,79 @@ class db_class extends db_connect{
 			}
 		}
 
+
+    public function login($username, $password){
+        $stmt = $this->conn->prepare("SELECT * FROM admin WHERE username = '$username' && password = '$password'") or die($this->conn->error);
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+            $valid = $result->num_rows;
+            $fetch = $result->fetch_array();
+            return array(
+                'username'=> $fetch['username'],
+                'count'=>$valid
+            );
+        }
+    }
+
+
+//    if($stmt->execute()){
+//        $stmt->close();
+//        $this->conn->close();
+//        //return true;
+//        //	$stmt->affected_rows;
+//        return true;
+//    }
+//    else {
+//        echo "INVALID USERNAME/PASSWORD Combination!";
+//    }
+//            $this->conn->close();
+//        else
+//            {
+//
+//            }
+//            $this->conn->close();
+
+
+//		public function login($name,$pass)
+//        {
+//            $stmt = $this->conn->prepare("SELECT name, pass FROM admin WHERE name=? AND  pass=? LIMIT 1");
+//            $stmt->bind_param('ss', $name, $pass);
+//            $stmt->execute();
+//            $stmt->bind_result($name, $pass);
+//            $stmt->store_result();
+//            if($stmt->num_rows == 1)  //To check if the row exists
+//            {
+//                while($stmt->fetch()) //fetching the contents of the row
+//
+//                {$_SESSION['Logged'] = 1;
+//                    $_SESSION['name'] = $name;
+//                    echo 'Success!';
+//                    //header("Location: admin_movie.php");
+//                    exit();
+//                }
+//
+//            }
+//
+//            if($stmt->execute()){
+//                $stmt->close();
+//                $this->conn->close();
+//                //return true;
+//                //	$stmt->affected_rows;
+//                return true;
+//            }
+//            else {
+//                echo "INVALID USERNAME/PASSWORD Combination!";
+//            }
+////            $this->conn->close();
+////        else
+////            {
+////
+////            }
+////            $this->conn->close();
+//        }
+        //}
+
+
 //    /*** for login process ***/
 //    public function check_login($name, $pass){
 //

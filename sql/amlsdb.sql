@@ -17,16 +17,16 @@ use amlsdb;
 --
 
 
-CREATE TABLE admin (
-  name varchar(20) NOT NULL,
-  pass varchar(100) NOT NULL
+CREATE TABLE IF NOT EXISTS admin (
+  username varchar(20) NOT NULL,
+  password varchar(100) NOT NULL
 ) ENGINE=InnoDB;
 
 --
 -- Dumping data for table "admin"
 --
 
-INSERT INTO admin (name, pass) VALUES
+INSERT INTO admin (username, password) VALUES
 ("admin", "admin");
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ INSERT INTO admin (name, pass) VALUES
 -- Table structure for table "tbl_movies"
 --
 
-CREATE TABLE movies (
+CREATE TABLE IF NOT EXISTS movies (
   movie_id int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   title varchar(100) NOT NULL,
   year int not null,
