@@ -12,6 +12,7 @@
 ?>
 <?php
 	session_start();
+  //  $_SESSION['username'] = true;
 	require_once "./functions/admin.php";
 	$title = "Add new movie";
 	require "./template/header.php";

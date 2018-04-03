@@ -1,6 +1,16 @@
 <?php
-    require_once 'session.php';
+ //   require_once 'session.php';
+session_start();
+//$time = $_SERVER['REQUEST_TIME'];
+
+///**
+// * for a 30 minute timeout, specified in seconds
+// */
+//$timeout_duration = 10;
+
 	//session_start();
+    // set time-out period (in seconds)
+    //$inactive = 3;
 	require_once "./functions/admin.php";
 	$title = "List Movie";
 	require_once "./template/header.php";
@@ -8,11 +18,76 @@
 
 //	$conn = db_connect();
 //	$result = getAll($conn);
-	
+
+//
+//if(isset($_SESSION['last-activity']) && time() - $_SESSION['last-activity'] > 6) {
+//    // session inactive more than 10 min
+//    header('location:admin_signout.php?timeout=1');
+//}
+//
+//$_SESSION['last-activity'] = time(); // update last activity time stamp
+
+
+
+
+//timeout failed!
+//    if((time() - $_SESSION['last_time']) > 6) // Time in Seconds
+//    {
+//        header("location:admin_signout.php");
+//    }
+//
+//
+//
+//$_SESSION['last_time']= time();
+///**
+// * Here we look for the user's LAST_ACTIVITY timestamp. If
+// * it's set and indicates our $timeout_duration has passed,
+// * blow away any previous $_SESSION data and start a new one.
+// */
+//if (isset($_SESSION['LAST_ACTIVITY']) &&
+//    ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+//    session_unset();
+//    session_destroy();
+//    session_start();
+//    header("location:admin.php");
+//}
+//
+///**
+// * Finally, update LAST_ACTIVITY so that our timeout
+// * is based on it and not the user's login time.
+// */
+//$_SESSION['LAST_ACTIVITY'] = $time;
+
+//// check to see if $_SESSION["timeout"] is set
+//if (isset($_SESSION["timeout"])) {
+//    // calculate the session's "time to live"
+//    $sessionTTL = time() - $_SESSION["timeout"];
+//    if ($sessionTTL > $inactive) {
+//        session_destroy();
+//        header("Location: admin.php");
+//    }
+//}
+//
+//$_SESSION["timeout"] = time();
+
+//if(isset($_SESSION['username']))
+//{
+//    if((time() - $_SESSION['last_time']) > 3)
+//    {
+//        echo"<script>alert('Login Session Expire!');
+//            window.location.href = 'admin.php';
+//            </script>";
+//        header("location:admin_signout.php");
+//    }
+//    else
+//    {
+//        $_SESSION['last_time'] = time();
+//    }
+//}
 ?>
 
 				
-<marquee direction="right"><b>Testing_Mode!!!</marquee>
+<!--<marquee direction="right"><b>Testing_Mode!!!</marquee>-->
 <div class="container-fluid">
     <section class="row">
 	<div class="col-md-8">
