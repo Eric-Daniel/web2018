@@ -1,5 +1,6 @@
       	<hr>
-        <div style=background-color:white;">
+        <div style="float: left; background-color:white; width:100%">
+        <div>
       	<footer>
 			<div class="text-muted pull-left">
           		<a href="admin.php">&copyEricDaniel</a> 2018
@@ -9,6 +10,7 @@
         	</div>
       	</footer>
     </div> <!-- /container -->
+        </div>
 
 
     <!-- Bootstrap core JavaScript

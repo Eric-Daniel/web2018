@@ -78,7 +78,7 @@ require_once 'session.php';
     <div id="result" style="position:absolute;background-color:#c5faff;"></div>
 </div>
 </div>
-</body>
+    </body>
     <div style=background-color:white;">
 	<table class="table" style="margin-top: 20px">
 		<tr style=background-color:#5df9d5;">
