@@ -1,93 +1,13 @@
 <?php
 require_once 'session.php';
-//session_start();
-//$time = $_SERVER['REQUEST_TIME'];
 
-///**
-// * for a 30 minute timeout, specified in seconds
-// */
-//$timeout_duration = 10;
-
-	//session_start();
-    // set time-out period (in seconds)
-    //$inactive = 3;
 	require_once "./functions/admin.php";
 	$title = "List Movie";
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 
-//	$conn = db_connect();
-//	$result = getAll($conn);
-
-//
-//if(isset($_SESSION['last-activity']) && time() - $_SESSION['last-activity'] > 6) {
-//    // session inactive more than 10 min
-//    header('location:admin_signout.php?timeout=1');
-//}
-//
-//$_SESSION['last-activity'] = time(); // update last activity time stamp
-
-
-
-
-//timeout failed!
-//    if((time() - $_SESSION['last_time']) > 6) // Time in Seconds
-//    {
-//        header("location:admin_signout.php");
-//    }
-//
-//
-//
-//$_SESSION['last_time']= time();
-///**
-// * Here we look for the user's LAST_ACTIVITY timestamp. If
-// * it's set and indicates our $timeout_duration has passed,
-// * blow away any previous $_SESSION data and start a new one.
-// */
-//if (isset($_SESSION['LAST_ACTIVITY']) &&
-//    ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
-//    session_unset();
-//    session_destroy();
-//    session_start();
-//    header("location:admin.php");
-//}
-//
-///**
-// * Finally, update LAST_ACTIVITY so that our timeout
-// * is based on it and not the user's login time.
-// */
-//$_SESSION['LAST_ACTIVITY'] = $time;
-
-//// check to see if $_SESSION["timeout"] is set
-//if (isset($_SESSION["timeout"])) {
-//    // calculate the session's "time to live"
-//    $sessionTTL = time() - $_SESSION["timeout"];
-//    if ($sessionTTL > $inactive) {
-//        session_destroy();
-//        header("Location: admin.php");
-//    }
-//}
-//
-//$_SESSION["timeout"] = time();
-
-//if(isset($_SESSION['username']))
-//{
-//    if((time() - $_SESSION['last_time']) > 3)
-//    {
-//        echo"<script>alert('Login Session Expire!');
-//            window.location.href = 'admin.php';
-//            </script>";
-//        header("location:admin_signout.php");
-//    }
-//    else
-//    {
-//        $_SESSION['last_time'] = time();
-//    }
-//}
 ?>
 
-				
-<!--<marquee direction="right"><b>Testing_Mode!!!</marquee>-->
 <div class="container-fluid">
     <section class="row">
 	<div class="col-md-8">
@@ -105,27 +25,97 @@ require_once 'session.php';
   
   <p  style="text-align:right" class="lead"><a  href="admin_add.php" class="btn btn-primary btn-md" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add New Movie </a></p>
-					
-<body>
-    <div class="container">
-        <br>
-         <h2 align="center">Test Ajax LS</h2>
-        <br>
-        <div class="form-group">
-            <div class="input-group"> <span class="input-group-addon">Search</span>
-                <input type="text" name="search_text"
-                id="search_text" placeholder="Search By Title, Year or Genre" class="col-6">
-                <select id="filter_movie">
-                    <option value="title">Title</option>
-                    <option value="year">Year</option>
-                    <option value="genre">Genre</option>
 
-                </select>
-            </div>
+<button onclick="myFunction()">Reload page/Back</button>
+
+<script>
+    function myFunction() {
+        location.reload();
+    }
+</script>
+
+<div class="page-header">
+    <h3>
+        <select id="year">
+            <option value="" selected="selected">Select Year</option>
+            <?php
+
+            $conn = new db_class();
+
+            $filter = $conn->filter();
+            //           ($stmt = $conn->query("$query"));
+            while($fetch = $filter->fetch_array()){
+                ?>
+                <option value=<?php echo $fetch['year']; ?>><?php echo $fetch['year']; ?></option>
+            <?php }	?>
+            }
+        </select>
+    </h3>
+</div>
+
+<div class="page-header">
+    <h3>
+        <select id="genre">
+            <option value="" selected="selected">Select Genre</option>
+            <?php
+            $conn = new db_class();
+
+            $filter = $conn->filterGenre();
+
+            while($fetch = $filter->fetch_array()){
+                ?>
+                <option value=<?php echo $fetch['genre']; ?>><?php echo $fetch['genre']; ?></option>
+            <?php }	?>
+            }
+        </select>
+    </h3>
+</div>
+
+
+
+<body>
+<div class="container">
+    <br>
+    <h2 align="center">Test Ajax LS</h2>
+    <br>
+    <div class="form-group">
+        <div class="input-group"> <span class="input-group-addon">Search</span>
+            <input type="text" name="search_text"
+                   id="search_text" placeholder="Search By Title, Year or Genre" class="col-6">
+
+            <select id="year">
+                <option value="" selected="selected">Select Year</option>
+                <?php
+
+                $conn = new db_class();
+
+                $filter = $conn->filter();
+
+                while($fetch = $filter->fetch_array()){
+               ?>
+                    <option value=<?php echo $fetch['year']; ?>><?php echo $fetch['year']; ?></option>
+                <?php }	?>
+                }
+            </select>
+            <select id="genre">
+                <option value="" selected="selected">Select Genre</option>
+                <?php
+
+                $conn = new db_class();
+
+                $filter = $conn->filterGenre();
+
+                while($fetch = $filter->fetch_array()){
+               ?>
+                    <option value=<?php echo $fetch['genre']; ?>><?php echo $fetch['genre']; ?></option>
+                <?php }	?>
+                }
+            </select>
         </div>
-        <br>
-        <div id="result" style="position:absolute;background-color:powderblue;"></div>
     </div>
+    <br>
+    <div id="result" style="position:absolute;background-color:powderblue;"></div>
+</div>
 </body>
 					
 
@@ -139,9 +129,9 @@ require_once 'session.php';
 			<th>&nbsp;</th> 
 			<th>&nbsp;</th>
 		</tr>
-		<?php /*while($row = mysqli_fetch_assoc($result)){ */?>
+		<?php ?>
 		<?php
-				//	require 'class.php';
+
 					$conn = new db_class();
 					$read = $conn->read();
 					while($fetch = $read->fetch_array()){ 
@@ -151,8 +141,6 @@ require_once 'session.php';
 			<td><?php echo $fetch['year']; ?></td>
 			<td><?php echo $fetch['genre']; ?></td>
 			<td><img src="./bootstrap/img/<?php echo $fetch['image'];?> "> <br> <?php echo $fetch['synopsis']; ?> </td> <!-- able display larger image above desc-->
-			<td><a href="admin_edit.php?movie_id=<?php echo $fetch['movie_id']; ?>">Edit</a></td>
-			<!--	<td><a href="admin_delete.php?movie_id=<?php echo $fetch['movie_id']; ?>">Delete</a></td>	-->
 			<td><center><a class = "btn btn-warning update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch['movie_id']?>"><span class = "glyphicon glyphicon-edit"></span> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch['movie_id']?>" data-toggle = "modal" data-target="#del_modal"><span class = "glyphicon glyphicon-trash"></span> Delete</a></center></td>
 		</tr>
 		<?php } ?>
@@ -196,6 +184,71 @@ require_once 'session.php';
 
 	<script>
 	$(document).ready(function(){
+        $("#year").change(function(){
+            var year_selected = $('#year').find(":selected").text();
+            console.log(year_selected);
+            if($.isNumeric(year_selected))
+            {
+                find_movie_by_year(year_selected);
+            }
+            else
+            {
+                $("#result").html('');
+            }
+        });
+
+
+        function find_movie_by_year(year_selected)
+        {
+            $.ajax({
+                url:"fetch.php",
+                method:"POST",
+                data:{query:year_selected},
+                success:function(data)
+                {
+                    $('#result').html(data);
+                }
+            });
+        }
+
+        $("#genre").change(function(){
+            var genre_selected = $('#genre').find(":selected").text();
+            console.log(genre_selected);
+            if($(genre_selected)) // if($.isNumeric(genre_selected))
+            {
+                find_movie_by_genre(genre_selected);
+            }
+            else
+            {
+                $("#result").html('');
+            }
+        });
+
+        function find_movie_by_genre(genre_selected) //pass in yearSelected para
+        {
+            $.ajax({
+                url:"fetch.php",
+                method:"POST",
+                data:{query:genre_selected}, //pass in year_selected para
+                success:function(data)
+                {
+                    $('#result').html(data);
+                }
+            });
+        }
+
+        function load_data(query)
+        {
+            $.ajax({
+                url:"fetch.php",
+                method:"POST",
+                data:{query:query},
+                success:function(data)
+                {
+                    $('#result').html(data);
+                }
+            });
+        }
 
         function load_data(query)
 {
@@ -209,23 +262,21 @@ require_once 'session.php';
   }
  });
 }
-// var myRegExp = new RegExp("Greatest");
- $("#search_text").keyup(function(){
-   //  var myRegExp = new RegExp($('#search_text').val().trim());
-     var values = "";
-    // $filter = $('#filter_movie').find(':selected').text();
-    // console.log($filter);
-     if($('#search_text').val() == "" || $('#search_text').val() == " ")
-     {
-        $("#result").css("display","none");
-     }
-   else
-     {
-        $("#result").css("display","block");
-        load_data($('#search_text').val());
-     }
- });
-		
+
+        $("#search_text").keyup(function(){
+
+            var values = "";
+
+            if($('#search_text').val() == "" || $('#search_text').val() == " ")
+            {
+                $("#result").html('');
+            }
+            else
+            {
+                load_data($('#search_text').val());
+            }
+        });
+
 		//Delete
 		$('.delete_movie_id').on('click', function(){
 			$movie_id = $(this).attr('name');
@@ -233,7 +284,7 @@ require_once 'session.php';
 				window.location = "admin_delete.php?movie_id=" + $movie_id;
 			});
 		});
-		
+
 		//Update
 		$('.update_movie_id').on('click', function(){
 			$movie_id = $(this).attr('name');
@@ -241,39 +292,8 @@ require_once 'session.php';
 		});
 	});
 </script>
-<!--
-<script>
-$(document).ready(function(){
-
- load_data();
-
- function load_data(query)
- {
-  $.ajax({
-   url:"fetch.php",     //  url:"fetch.php",   //halt temporarily
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#result').html(data);
-   }
-  });
- }
- $('#search_text').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
- });
-});
-</script>				-->
 
 <?php
-//	if(isset($conn)) {mysqli_close($conn);}
+
 	require_once "./template/footer.php";
 ?>
