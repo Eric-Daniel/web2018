@@ -17,6 +17,7 @@
 	$title = "Add new movie";
 	require "./template/header.php";
 	require "./functions/database_functions.php";
+	//require "validation.js";
 //	$conn = db_connect();
 
 	if(isset($_POST['add'])){
@@ -75,9 +76,38 @@
 		header("Location: admin_movie.php");
 		
 	}
-	
+
+
 ?>
-	<form method="post" action="admin_add.php" enctype="multipart/form-data">
+    <html>
+    <head>
+        <script src="validation.js"></script>
+<!--        <script>-->
+<!--            function validateForm() {-->
+<!--                var x = document.forms["createForm"]["title"].value;-->
+<!--                if (x == "") {-->
+<!--                    alert("Title must be filled out");-->
+<!--                    return false;-->
+<!--                }-->
+<!--            }-->
+<!--        </script>-->
+<!--        <script type="text/javascript">-->
+<!--            function validateForm()-->
+<!--            {-->
+<!--                var title=document.forms["createForm"]["title"].value;-->
+<!---->
+<!--                if (title==null )-->
+<!--                {-->
+<!--                    alert("Please Fill All Required Field");-->
+<!--                    return false;-->
+<!--                }-->
+<!--            }-->
+<!--        </script>-->
+    </head>
+    <body>
+
+
+	<form name="createForm" form method="post" action="admin_add.php" onsubmit='return validateForm()' enctype="multipart/form-data">
 		<table class="table">
 			<tr>
 				<th>Title</th>
@@ -85,15 +115,16 @@
 			</tr>
 			<tr>
 				<th>Year</th>
-				<td><input type="text" name="year" required></td>
+				<td><input type="text" name="year"  onblur="yearValidation(this.value,event)"
+                           onkeypress="yearValidation(this.value,event)"></td>
 			</tr>
 			<tr>
 				<th>Genre</th>
-				<td><input type="text" name="genre" required></td>
+				<td><input type="text" name="genre"></td>
 			</tr>
 			<tr>
 				<th>Image</th>
-				<td><input type="file" name="image"></td>
+				<td><input type="file" name="image" id="img" onchange="imageValidation()"></td>
 			</tr>
 			<tr>
 				<th>Synopsis</th>
