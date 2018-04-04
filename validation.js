@@ -6,6 +6,8 @@ function validateForm() {
     var genre = document.forms["createForm"]["genre"].value;
     var image = document.forms["createForm"]["image"].value;
     var synopsis = document.forms["createForm"]["synopsis"].value;
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
 
     if (title == "") {
         alert("Title must be filled out");
@@ -29,6 +31,16 @@ function validateForm() {
 
     if (synopsis == "") {
         alert("Synopsis must be filled out");
+        return false;
+    }
+
+    if (username == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+
+    if (password == "") {
+        alert("Password must be filled out");
         return false;
     }
 
@@ -161,6 +173,19 @@ function synopsisValidation(synopsis,ev) {
         if (synopsis.length ===0)
         {
             alert("EmptySynopsis is not proper. Please check");
+            return false;
+        }
+    }
+}
+
+function usernameValidation(username,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || title.length===0 ) {
+
+        if (username.length ===0)
+        {
+            alert("EmptyUsername is not proper. Please check");
             return false;
         }
     }
