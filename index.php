@@ -96,7 +96,7 @@
 <script>
     $(document).ready(function(){
         $("#year").change(function(){
-        var year_selected = $('#year').find(":selected").text();
+        var year_selected = $('#year',).find(":selected").text();
         console.log(year_selected);
               if($.isNumeric(year_selected))
         {
@@ -123,10 +123,16 @@
 
         $("#genre").change(function(){
             var genre_selected = $('#genre').find(":selected").text();
-            console.log(genre_selected);
+            var year_selected = $('#year').find(":selected").text();
+            console.log(genre_selected,year_selected);
+//            console.log(year_selected);
             if($(genre_selected)) // if($.isNumeric(genre_selected))
             {
                 find_movie_by_genre(genre_selected);
+            }
+            else if($(year_selected)) // if($.isNumeric(genre_selected))
+            {
+                find_movie_by_year(year_selected);
             }
             else
             {
