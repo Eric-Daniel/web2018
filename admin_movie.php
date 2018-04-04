@@ -20,8 +20,6 @@ require_once 'session.php';
         </div>
     </section>
 </div>
-
-
   
   <p  style="text-align:right" class="lead"><a  href="admin_add.php" class="btn btn-primary btn-md" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add New Movie </a></p>
