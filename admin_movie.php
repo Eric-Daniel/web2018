@@ -178,7 +178,8 @@ session_start();
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<h3 class = "text-success modal-title">Update Movie</h3>
 		</div>
-		<form method = "POST" action = "admin_update.php">
+<!--		<form method = "POST" action = "admin_update.php">-->
+        <form name="updateForm" method = "POST" action = "admin_update.php ">
 <!--		<form name="createForm" method = "POST" action = "admin_update.php" onsubmit='return validateForm()'>-->
 		<div class="modal-body update">
 			
@@ -238,6 +239,9 @@ session_start();
 		$('.update_movie_id').on('click', function(){
 			$movie_id = $(this).attr('name');
 			$('.update').load('update_movie_form.php?movie_id=' + $movie_id);
+//            $("#updateYear").change(function(event) {
+//                yearValidation(year,ev)
+//            });
 		});
 	});
 </script>

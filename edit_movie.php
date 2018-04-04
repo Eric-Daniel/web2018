@@ -1,65 +1,62 @@
-
-<?php 
-	//require_once 'class.php';
-//	if(ISSET($_POST['update'])){	
-//		$firstname = $_POST['firstname'];
-//		$lastname = $_POST['lastname'];
-//		$movie_id = $_POST['movie_id'];
-//$movie_id = $_REQUEST['movie_id'];				//duplicated
-// $fetch = $conn->movie_id($movie_id);			// duplicated
+<?php
+session_start();
+//	require_once 'class.php';
+require_once "./template/header.php";
 require_once "./functions/database_functions.php";
-		$conn = new db_class();
-	//	$conn->update($title, $year, $genre, $image, $synopsis);	
-//		echo '
-//			<script>alert("Updated Successfully")</script>;
-//			<script>window.location = "admin_movie.php"</script>; 			
-//		';
-//	}	
-	
-	// if save change happen
-	if(!isset($_POST['save_change'])){   			//if(!isset($_POST['save_change'])){
-		echo "Something wrong!";
-		exit;
+$conn = new db_class();
+if(isset($_POST['submit'])){
+    $title = $_POST['title'];
+    $year = $_POST['year'];
+    $genre = $_POST['genre'];
+    $synopsis = $_POST['synopsis'];
+
+    if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
+        $image = $_FILES['image']['name'];
+        $directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
+        $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "bootstrap/img/";
+        $uploadDirectory .= $image;
+        move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
+    }
+
+    //	$conn = new db_class();
+
+    $conn->update();
+
+    echo '
+			<script>alert("Updated Successfully")</script>;
+			<script>window.location = "admin_movie.php"</script>;
+		';
+}
+?>
+<?php
+//	if(isset($conn)) {mysqli_close($conn);}
+require "./template/footer.php"
+?>
+
+
+<?php
+/*
+	require_once("db.php");
+	if (isset($_POST['submit'])) {
+		$sql = $conn->prepare("UPDATE tbl_emp_details SET department=? , name=? , email=?  WHERE id=?");
+		$department=$_POST['department'];
+		$name = $_POST['name'];
+		$email= $_POST['email'];
+		$sql->bind_param("sssi",$department, $name, $email,$_GET["id"]);
+		if($sql->execute()) {
+			$success_message = "Edited Successfully";
+		} else {
+			$error_message = "Problem in Editing Record";
+		}
+
 	}
-	if(isset($_POST['save_change'])){	//////////////////////////////////////////////////////////// changed to update
-/* $title = ($_POST['title']);
-	$year = ($_POST['year']);
-	$genre = ($_POST['genre']);
-	$synopsis = ($_POST['synopsis']); */
-	$title = trim($_POST['title']);
-	$year = intval(trim($_POST['year']));
-	$genre = trim($_POST['genre']);
-	$synopsis = trim($_POST['synopsis']);
-
-	if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
-		$image = $_FILES['image']['name'];
-		$directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
-		$uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "bootstrap/img/";
-		$uploadDirectory .= $image;
-		move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
+	$sql = $conn->prepare("SELECT * FROM tbl_emp_details WHERE id=?");
+	$sql->bind_param("i",$_GET["id"]);
+	$sql->execute();
+	$result = $sql->get_result();
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
 	}
-
-	
-//require_once("./functions/database_functions.php");
-//	$conn = db_connect();
-
-
-//$conn->update($title, $year, $genre, $image, $synopsis, $movie_id);	
-$result = $conn->update($title, $year, $genre, $image, $synopsis, $movie_id);
-
-/*	$query = "UPDATE movies SET title='$title',year='$year',genre='$genre',synopsis='$synopsis'";
-	if(isset($image)){
-		$query .= ", image='$image' WHERE movie_id ='$movie_id'";
-	} else {
-		$query .= " WHERE movie_id = '$movie_id'";
-	}
-	// two cases for file , if file submit is on => change a lot
-	$result = mysqli_query($conn, $query);
-	if(!$result){
-		echo "Can't update data " . mysqli_error($conn);
-		exit;
-	} else {
-		header("Location: admin_edit.php?movie_id=$movie_id");
-	} */
-	header("Location: admin_edit.php?movie_id=$movie_id"); }
+	$conn->close();
+	//$stmt = $this->conn->prepare("UPDATE movies SET title=?,year=?,genre=?, image=?, synopsis=? WHERE movie_id=?") or die($this->conn->error);			*/
 ?>

@@ -1,5 +1,6 @@
 
 function validateForm() {
+    var title = document.forms["updateForm"]["title"].value;
     var title = document.forms["createForm"]["title"].value;
     var year = document.forms["createForm"]["year"].value;
     var genre = document.forms["createForm"]["genre"].value;
