@@ -18,6 +18,7 @@
         integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     </head>
     
     <body>
@@ -43,10 +44,11 @@
         </nav>
         <?php if(isset($title) && $title=="Index" ) { ?>
         <!-- Main call to action -->
-        <div>
+            <div style="float: left; background-color:#71746c; width:100%">
             <div class="container">
-                 <h1>Welcome to online AAA Library Store</h1>
-                <p class="lead">Text-Add-On</p>
+               <marquee><h1 style="font-family: 'Tangerine', serif;
+        font-size: 70px; width:100%">Welcome to online AAA Library Store</h1></marquee>
+                <br>
             </div>
         </div>
         <?php } ?>

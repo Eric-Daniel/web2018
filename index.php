@@ -3,7 +3,8 @@
   require_once "./template/header.php";
   require_once "./functions/database_functions.php";
 ?>
-
+<!--<div style="float: left; background-color:#bdc1b6; width:100%">-->
+<div style="float: left; background-color:#71746c; width:100%">
 <div class="container">
     <h5><button onclick="myFunction()">Reload page/Back</button></h5>
 
@@ -60,26 +61,18 @@
 
 
         <div class="form-group">
-            <!--        <div class="input-group input-group-lg">-->
-            <!--            <div class="input-group"> <span class="input-group-addon" id="sizing-addon1">SEARCH</span>-->
-            <!--             <input type="text" name="search_text" class="form-control" id="search_text" placeholder="Search By Title, Year or Genre" aria-describedby="sizing-addon1">-->
-            <!--            </div>-->
-            <!--        </div>-->
-            <!---->
-            <!--    <br>-->
-            <div id="result" style="position:absolute;background-color:powderblue;"></div>
+            <div id="result" style="position:absolute;background-color:#c5faff;"></div>
         </div>
     </div>
     </body>
 
-
+    <div style=background-color:white;">
 <table class="table" style="margin-top: 20px">
-    <br>
-    <tr>
+
+    <tr style=background-color:#5df9d5;">
         <th>Title</th>
         <th>Year</th>
         <th>Genre</th>
-        <!--<th>Image</th> -->
         <th>Description</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
@@ -98,7 +91,7 @@
             <td><img src="./bootstrap/img/<?php echo $fetch['image'];?> "> <br> <?php echo $fetch['synopsis']; ?> </td> <!-- able display larger image above desc-->
         </tr>
     <?php } ?>
-</table>
+</table> </div>
 
 <script>
     $(document).ready(function(){

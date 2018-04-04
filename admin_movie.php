@@ -229,7 +229,6 @@ require_once 'session.php';
   }
  });
 }
-
         $("#search_text").keyup(function(){
 
             var values = "";
