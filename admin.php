@@ -63,7 +63,6 @@ require_once "./template/header.php";
 </div>
 </body>
 
-
 <?php
 require_once "./template/footer.php";
 ?>

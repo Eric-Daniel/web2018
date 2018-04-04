@@ -24,12 +24,8 @@ require_once 'session.php';
   <br>
   <p  style="text-align:right" class="lead"><a  href="admin_add.php" class="btn btn-primary btn-md" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add New Movie </a></p>
-
-
-
 <div class="container">
     <h5><button onclick="myFunction()">Reload page/Back</button></h5>
-
     <script>
         function myFunction() {
             location.reload();
@@ -77,10 +73,7 @@ require_once 'session.php';
             <span class="input-group-text" id="basic-addon1">SEARCH</span>
         </div>
         <input type="text" name="search_text" id="search_text" class="form-control" placeholder="Search By Title, Year or Genre" aria-label="SEARCH" aria-describedby="basic-addon1">
-
     </div>
-
-
     <div class="form-group">
     <div id="result" style="position:absolute;background-color:#c5faff;"></div>
 </div>
