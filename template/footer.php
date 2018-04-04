@@ -1,5 +1,5 @@
       	<hr>
-
+        <div style=background-color:white;">
       	<footer>
 			<div class="text-muted pull-left">
           		<a href="admin.php">&copyEricDaniel</a> 2018

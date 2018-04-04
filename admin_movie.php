@@ -8,6 +8,7 @@ require_once 'session.php';
 
 ?>
 
+<div style="float: left; background-color:#71746c; width:100%">
 <div class="container-fluid">
     <section class="row">
 	<div class="col-md-8">
@@ -69,7 +70,6 @@ require_once 'session.php';
         </div>
     </div>
 </div>
-<body>
 <div class="container">
     <br>
     <div class="input-group mb-3">
@@ -82,32 +82,22 @@ require_once 'session.php';
 
 
     <div class="form-group">
-<!--        <div class="input-group input-group-lg">-->
-<!--            <div class="input-group"> <span class="input-group-addon" id="sizing-addon1">SEARCH</span>-->
-<!--             <input type="text" name="search_text" class="form-control" id="search_text" placeholder="Search By Title, Year or Genre" aria-describedby="sizing-addon1">-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--    <br>-->
-    <div id="result" style="position:absolute;background-color:powderblue;"></div>
+    <div id="result" style="position:absolute;background-color:#c5faff;"></div>
 </div>
 </div>
 </body>
-
+    <div style=background-color:white;">
 	<table class="table" style="margin-top: 20px">
-        <br>
-		<tr>
+		<tr style=background-color:#5df9d5;">
 			<th>Title</th>
 			<th>Year</th>
 			<th>Genre</th>
-			<!--<th>Image</th> -->
 			<th>Description</th>
 			<th>&nbsp;</th> 
 			<th>&nbsp;</th>
 		</tr>
 		<?php ?>
 		<?php
-
 					$conn = new db_class();
 					$read = $conn->read();
 					while($fetch = $read->fetch_array()){ 
@@ -120,7 +110,7 @@ require_once 'session.php';
 			<td><center><a class = "btn btn-warning update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch['movie_id']?>"><span class = "glyphicon glyphicon-edit"></span> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch['movie_id']?>" data-toggle = "modal" data-target="#del_modal"><span class = "glyphicon glyphicon-trash"></span> Delete</a></center></td>
 		</tr>
 		<?php } ?>
-	</table>
+    </table> </div>
 	<!-- Modal -->
 <div class="modal fade" id="del_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -155,6 +145,7 @@ require_once 'session.php';
   </div>
 </div>
 
+</div>
 
     <script src="validation.js"></script>
 

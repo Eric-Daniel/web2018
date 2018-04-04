@@ -1,0 +1,35 @@
+ul
+{
+    background-color: #333333;
+}
+
+li a
+{
+    display: block;
+    color: white;
+    padding: 16px;
+}
+
+li a:hover
+{
+    background-color: red;
+}
+
+/*div*/
+/*{*/
+    /*height: 100%;*/
+    /*background-image: url("https://i.imgur.com/xvWDnVC.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+/*}*/
+
+#imageGallery {
+    width: 960px;
+    position: relative;
+    /*background-image: url("blackPanther.jpg");*/
+    background-color: red;
+}
+
+.th {
+    background-color: red;
+}
