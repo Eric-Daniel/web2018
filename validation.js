@@ -1,5 +1,6 @@
 
 function validateForm() {
+   // var title = document.forms["createForm"]["title"].value;
     var title = document.forms["createForm"]["title"].value;
     var year = document.forms["createForm"]["year"].value;
     var genre = document.forms["createForm"]["genre"].value;
@@ -33,30 +34,104 @@ function validateForm() {
 
 }
 
+function titleValidation(title,ev) {
+
+   // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || title.length===0 ) {
+
+        if (title.length ===0)
+        {
+            alert("EmptyTitle is not proper. Please check");
+            return false;
+        }
+    }
+}
+
 function yearValidation(year,ev) {
 
-    var text = /^[0-9]+$/;
-    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
-        if (year != 0) {
-            if ((year != "") && (!text.test(year))) {
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || year.length===0 ) {
 
-                alert("Please Enter Numeric Values Only");
-                return false;
-            }
-
-            if (year.length != 4) {
-                alert("Year is not proper. Please check");
-                return false;
-            }
-            var current_year=new Date().getFullYear();
-            if((year < 1960) || (year > current_year))
-            {
-                alert("Year should be in range 1960 to current year");
-                return false;
-            }
-            return true;
-        } }
+        if (year.length ===0)
+        {
+            alert("EmptyYear  is not proper. Please check");
+            return false;
+        }
+    }
 }
+
+// function yearValidation(year,ev) {
+//
+//     var text = /^[0-9]+$/;
+//     var current_year=new Date().getFullYear();
+//     if(ev.type=="blur" || year.length===0 || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
+//         if (year.length ===0)
+//         {
+//             alert("EmptyYear is not proper. Please check");
+//             return false;
+//         }
+//         else
+//         if (year != 0) {
+//             if ((year != "") && (!text.test(year))) {
+//
+//                 alert("Please Enter Numeric Values Only");
+//                 return false;
+//             }
+//
+//             // if (year.length != 4) {
+//             //     alert("Year is not proper. Please check");
+//             //     return false;
+//             // }
+//
+//
+//             else if((year < 1960) || (year > current_year))
+//             {
+//                 alert("Year should be in range 1960 to current year");
+//                 return false;
+//             }
+//             return true;
+//         }
+//
+//     }
+// }
+
+function genreValidation(genre,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || genre.length===0 ) {
+
+        if (genre.length ===0)
+        {
+            alert("EmptyGenre is not proper. Please check");
+            return false;
+        }
+    }
+}
+
+function imageValidation(image,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || image.length===0 ) {
+
+        if (image.length ===0)
+        {
+            alert("EmptyImage is not proper. Please check");
+            return false;
+        }
+    }
+}
+
+// function yearValidation1(year) {
+//
+//    // var text = /^[0-9]+$/;
+//     if(year.length===null ) {
+//
+//             if (year.length ===null) {
+//                 alert("EmptyYear is not proper. Please check");
+//                 return false;
+//             }
+//           }
+// }
 
 function imageValidation() {
     var formData = new FormData();
@@ -76,4 +151,17 @@ function imageValidation() {
         return false;
     }
     return true;
+}
+
+function synopsisValidation(synopsis,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || synopsis.length===0 ) {
+
+        if (synopsis.length ===0)
+        {
+            alert("EmptySynopsis is not proper. Please check");
+            return false;
+        }
+    }
 }

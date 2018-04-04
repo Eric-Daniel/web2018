@@ -45,7 +45,7 @@ require_once "./functions/database_functions.php";
 
 
 //$conn->update($title, $year, $genre, $image, $synopsis, $movie_id);	
-$result = $conn->update($title, $year, $genre, $image, $synopsis, $movie_id);
+$result = $conn->update();
 
 /*	$query = "UPDATE movies SET title='$title',year='$year',genre='$genre',synopsis='$synopsis'";
 	if(isset($image)){

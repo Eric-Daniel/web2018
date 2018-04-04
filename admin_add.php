@@ -111,12 +111,12 @@
 		<table class="table">
 			<tr>
 				<th>Title</th>
-				<td><input type="text" name="title"></td>
+				<td><input type="text" name="title" ></td>
 			</tr>
 			<tr>
 				<th>Year</th>
-				<td><input type="text" name="year"  onblur="yearValidation(this.value,event)"
-                           onkeypress="yearValidation(this.value,event)"></td>
+<!--				<td><input type="text" name="year" ></td>-->
+                <td><input type="text" name="year"></td>
 			</tr>
 			<tr>
 				<th>Genre</th>
@@ -141,3 +141,8 @@
 	require_once "./template/footer.php";
 	//header("Location: admin_movie.php");
 ?>
+
+
+
+<!--    <td><input type="text" name="year"  onblur="yearValidation(this.value,event)"-->
+<!--               onkeypress="yearValidation(this.value,event)"></td>-->
