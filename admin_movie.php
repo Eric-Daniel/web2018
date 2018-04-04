@@ -6,7 +6,82 @@ require_once 'session.php';
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 
+//$time = $_SERVER['REQUEST_TIME'];
+//
+///**
+// * for a 30 minute timeout, specified in seconds
+// */
+//$timeout_duration = 5;
+//
+///**
+// * Here we look for the user's LAST_ACTIVITY timestamp. If
+// * it's set and indicates our $timeout_duration has passed,
+// * blow away any previous $_SESSION data and start a new one.
+// */
+//if (isset($_SESSION['LAST_ACTIVITY']) &&
+//    ($time - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+//    session_unset();
+//    session_destroy();
+//    session_start();
+//}
+//
+///**
+// * Finally, update LAST_ACTIVITY so that our timeout
+// * is based on it and not the user's login time.
+// */
+//$_SESSION['LAST_ACTIVITY'] = $time;
+//
+//$inactive = 6;
+//$session_life = time() - $_SESSION['timeout'];
+//if($session_life > $inactive) {
+//    session_destroy();
+//    header("Location: admin.php");
+//}
+//$_SESSION['timeout']=time();
+//echo 'Hello '.($_COOKIE['username']!='' ? $_COOKIE['username'] : 'Admin'); // Hello David!
+
 ?>
+<?php
+setcookie('CookieEnabledTest', 'check', time()+3600);
+?>
+    <script type="text/javascript">
+
+        CookieCheck();
+
+        function CookieCheck()
+        {
+            $.post
+            (
+                'ajax.php',
+                {
+                    cmd: 'cookieCheck'
+                },
+                function (returned_data, status)
+                {
+                    if (status === "success")
+                    {
+                        if (returned_data === "enabled")
+                        {
+                            alert ("Cookies are activated.");
+                        }
+                        else
+                        {
+                            alert ("Cookies are not activated.");
+                        }
+                    }
+                }
+            );
+        }
+
+        $cmd = filter_input(INPUT_POST, "cmd");
+
+        if ( isset( $cmd ) && $cmd == "cookieCheck" )
+        {
+            echo (isset($_COOKIE['CookieEnabledTest']) && $_COOKIE['CookieEnabledTest']=='check') ? 'enabled' : 'disabled';
+        }
+    </script>
+
+
 
 <div style="float: left; background-color:#71746c; width:100%">
 <div class="container-fluid">
