@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'session.php';
 require_once "./functions/database_functions.php";
 if(ISSET($_POST['login'])){
     $conn = new db_class();
