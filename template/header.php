@@ -32,13 +32,10 @@
                 <div>
                     <ul class="nav navbar-nav ml-auto">
                         <!-- link to admin.php -->
-                        <li class="nav-item"><a href="admin.php" class="nav-link"><span class="glyphicon glyphicon-lock"></span>&nbsp; Admin_Login</a>
+                        <li class="nav-item"><a href="admin.php" class="nav-link"><i class="fa fa-lock"></i>&nbsp; Admin_Login</a>
                         </li>
                         <!-- link to movies.php -->
-                        <li class="nav-item"><a href="index.php" class="nav-link"><span class="glyphicon glyphicon-film"></span>&#xA0; Movies</a>
-                        </li>
-                        <!-- link to contacts.php -->
-                        <li class="nav-item"><a href="contact.php" class="nav-link"><span class="glyphicon glyphicon-phone-alt"></span>&#xA0; Contact</a>
+                        <li class="nav-item"><a href="index.php" class="nav-link"><i class="fa fa-home"></i>&#xA0; Home</a>
                         </li>
                     </ul>
                 </div>
