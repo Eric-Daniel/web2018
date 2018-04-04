@@ -179,6 +179,7 @@ session_start();
 			<h3 class = "text-success modal-title">Update Movie</h3>
 		</div>
 		<form method = "POST" action = "admin_update.php">
+<!--		<form name="createForm" method = "POST" action = "admin_update.php" onsubmit='return validateForm()'>-->
 		<div class="modal-body update">
 			
       </div>
@@ -190,6 +191,8 @@ session_start();
   </div>
 </div>
 
+
+    <script src="validation.js"></script>
 
 	<script>
 	$(document).ready(function(){

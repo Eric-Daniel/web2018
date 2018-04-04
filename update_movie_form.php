@@ -14,19 +14,20 @@ session_start();
 <div class = "form-group">
 	<label>Year</label>
 	<input type = "text" name = "year" value = "<?php echo $fetch['year']?>" class = "form-control" />
-</div>	
+</div>
 <div class = "form-group">
 	<label>Genre</label>
 	<input type = "text" name = "genre" value = "<?php echo $fetch['genre']?>" class = "form-control" />
-</div>	 
+</div>
 <div class = "form-group">
 	<label>Image</label>
 	<input type = "file" name = "image" value = "<?php echo $fetch['image']?>" class = "form-control" />
-</div>	 
+</div>
 <div class = "form-group">
 	<label>Synopsis</label>
 	<textarea name="synopsis" cols="40" rows="5"></textarea>
-</div>	
+</div>
+
 
 
 
