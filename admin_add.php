@@ -45,25 +45,25 @@
 	<form name="createForm" form method="post" action="admin_add.php" onsubmit='return validateForm()' enctype="multipart/form-data">
 		<table class="table">
 			<tr>
-				<th>Title</th>
+				<th>Title:</th>
 				<td><input type="text" name="title" ></td>
 			</tr>
 			<tr>
-				<th>Year</th>
+				<th>Year:</th>
 
                 <td><input type="text" name="year" onblur="yearValidation(this.value,event)"
                            onkeypress="yearValidation(this.value,event)"></td>
 			</tr>
 			<tr>
-				<th>Genre</th>
+				<th>Genre:</th>
 				<td><input type="text" name="genre"></td>
 			</tr>
 			<tr>
-				<th>Image</th>
+				<th>Image:</th>
 				<td><input type="file" name="image" id="img" onchange="imageValidation()"></td>
 			</tr>
 			<tr>
-				<th>Synopsis</th>
+				<th>Synopsis:</th>
 				<td><textarea name="synopsis" cols="40" rows="5"></textarea></td>
 			</tr>
 			
