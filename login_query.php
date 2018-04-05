@@ -15,8 +15,8 @@ if(ISSET($_POST['login'])){
         $_SESSION["username"]= $get_user["username"];
 
         if(!empty($_POST["remember"])) {
-            setcookie ("member_login",$_POST["username"],time()+ (30));
-            setcookie ("password",$_POST["password"],time()+ (30));
+            setcookie ("member_login",$_POST["username"],time()+ (60));
+            setcookie ("password",$_POST["password"],time()+ (60));
         } else {
             if(isset($_COOKIE["member_login"])) {
                 setcookie ("member_login","");
