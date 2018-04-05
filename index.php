@@ -88,7 +88,7 @@
             <td><?php echo $fetch['title']; ?></td>
             <td><?php echo $fetch['year']; ?></td>
             <td><?php echo $fetch['genre']; ?></td>
-            <td><img src="./bootstrap/img/<?php echo $fetch['image'];?> "> <br> <?php echo $fetch['synopsis']; ?> </td> <!-- able display larger image above desc-->
+            <td><?php echo '<img src="./bootstrap/img/' . $fetch['image'] . '" height="268" width="182"> '; ?> <br> <?php echo $fetch['synopsis']; ?> </td>
         </tr>
     <?php } ?>
 </table> </div>
