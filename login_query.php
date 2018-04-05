@@ -15,11 +15,11 @@ if(ISSET($_POST['login'])){
      //   $_SESSION['LAST_ACTIVITY'] = $time;
       //  $_SESSION['timeout']=time();
         $username = 'admin';
-        $_SESSION["member_id"]		   = $user["member_id"];
+        $_SESSION["username"]= $get_user["username"];
 
         if(!empty($_POST["remember"])) {
-            setcookie ("member_login",$_POST["username"],time()+ (10));
-            setcookie ("password",$_POST["password"],time()+ (10));
+            setcookie ("member_login",$_POST["username"],time()+ (30));
+            setcookie ("password",$_POST["password"],time()+ (30));
         } else {
             if(isset($_COOKIE["member_login"])) {
                 setcookie ("member_login","");
@@ -28,6 +28,11 @@ if(ISSET($_POST['login'])){
                 setcookie ("password","");
             }
         }
+//                    $_SESSION['start'] = time(); // Taking now logged in time.
+        // Ending a session in 30 minutes from the starting time.
+//                        $_SESSION['expire'] = $_SESSION['start'] + (10);
+//                        header('Location: admin_movie.php');
+
 
 //        setcookie('username',$username,time() + (86400 * 7)); // 86400 = 1 day
 //        setcookie('username',$username,time() + (8)); // 86400 = 1 day

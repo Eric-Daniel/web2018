@@ -6,6 +6,13 @@ require_once 'session.php';
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 
+
+//$expiry = 10 ;//session expiry required after 30 mins
+//if (isset($_SESSION['LAST']) && (time() - $_SESSION['LAST'] > $expiry)) {
+//    session_unset();
+//    session_destroy();
+//}
+//$_SESSION['LAST'] = time();
 //$time = $_SERVER['REQUEST_TIME'];
 //
 ///**
@@ -40,48 +47,123 @@ require_once 'session.php';
 //$_SESSION['timeout']=time();
 //echo 'Hello '.($_COOKIE['username']!='' ? $_COOKIE['username'] : 'Admin'); // Hello David!
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                    if (!isset($_SESSION['username'])) {
+//                        echo "Please Login again";
+//                        echo "<a href=admin.php'>Click Here to Login</a>";
+//                    }
+//                    else {
+//                        $now = time(); // Checking the time now when home page starts.
+//
+//                        if ($now > $_SESSION['expire']) {
+//                            session_destroy();
+//                            echo "Your session has expired! <a admin.php'>Login here</a>";
+//                            header("Location: admin.php");
+//                        }
+//                        else { //Starting this else one [else1]
+//                            ?>
+<!--                            <!-- From here all HTML coding can be done -->-->
+<!--                            <html>-->
+<!--                            Welcome-->
+<!--                            --><?php
+//                            echo $_SESSION['username'];
+//                            echo "<a href='admin_signout.php'>Log out</a>";
+//                            ?>
+<!--                            </html>-->
+<!--                            --><?php
+//                        }
+//                    }
+
 ?>
 <?php
-setcookie('CookieEnabledTest', 'check', time()+3600);
-?>
-    <script type="text/javascript">
+//setcookie('CookieEnabledTest', 'check', time()+3600);
+//?>
+<!--    <script type="text/javascript">-->
+<!---->
+<!--        CookieCheck();-->
+<!---->
+<!--        function CookieCheck()-->
+<!--        {-->
+<!--            $.post-->
+<!--            (-->
+<!--                'ajax.php',-->
+<!--                {-->
+<!--                    cmd: 'cookieCheck'-->
+<!--                },-->
+<!--                function (returned_data, status)-->
+<!--                {-->
+<!--                    if (status === "success")-->
+<!--                    {-->
+<!--                        if (returned_data === "enabled")-->
+<!--                        {-->
+<!--                            alert ("Cookies are activated.");-->
+<!--                        }-->
+<!--                        else-->
+<!--                        {-->
+<!--                            alert ("Cookies are not activated.");-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+<!--            );-->
+<!--        }-->
+<!---->
+<!--        $cmd = filter_input(INPUT_POST, "cmd");-->
+<!---->
+<!--        if ( isset( $cmd ) && $cmd == "cookieCheck" )-->
+<!--        {-->
+<!--            echo (isset($_COOKIE['CookieEnabledTest']) && $_COOKIE['CookieEnabledTest']=='check') ? 'enabled' : 'disabled';-->
+<!--        }-->
+<!--    </script>-->
 
-        CookieCheck();
-
-        function CookieCheck()
-        {
-            $.post
-            (
-                'ajax.php',
-                {
-                    cmd: 'cookieCheck'
-                },
-                function (returned_data, status)
-                {
-                    if (status === "success")
-                    {
-                        if (returned_data === "enabled")
-                        {
-                            alert ("Cookies are activated.");
-                        }
-                        else
-                        {
-                            alert ("Cookies are not activated.");
-                        }
-                    }
-                }
-            );
-        }
-
-        $cmd = filter_input(INPUT_POST, "cmd");
-
-        if ( isset( $cmd ) && $cmd == "cookieCheck" )
-        {
-            echo (isset($_COOKIE['CookieEnabledTest']) && $_COOKIE['CookieEnabledTest']=='check') ? 'enabled' : 'disabled';
-        }
-    </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--                --><?php
+//                if(!isset($_SESSION['pageload']))
+//                {
+//                    $_SESSION['pageload'] = 1;
+//                }
+//                else
+//                {
+//                    echo "USER TIMEOUT.";
+//                }
+//
+//                if(!isset($_COOKIE['SomeThing']))
+//                {
+//                    echo "USER TIMEOUT.";
+//                }
+//                else
+//                {
+//                    $value = "some value";
+//                    setcookie("SomeThing", $value, time()+180);
+//                }
+//                ?>
 
 <div style="float: left; background-color:#71746c; width:100%">
 <div class="container-fluid">
