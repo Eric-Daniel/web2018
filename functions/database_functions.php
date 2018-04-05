@@ -19,7 +19,7 @@ class db_class extends db_connect{
 
 		public function read(){
 
-			$stmt = $this->conn->prepare("SELECT * from movies ORDER BY movie_id DESC") or die($this->conn->error);
+			$stmt = $this->conn->prepare("SELECT * from movies ORDER BY movie_id ASC") or die($this->conn->error);
 			if($stmt->execute()){
 				$result = $stmt->get_result();
 				$stmt->close();

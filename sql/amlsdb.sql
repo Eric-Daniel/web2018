@@ -78,8 +78,6 @@ INSERT INTO movies(title, year, genre, image, synopsis) VALUES
 ("Sinister",2012,"Horror","sinister.jpg","Washed-up true-crime writer Ellison Oswalt finds a box of super 8 home movies that suggest the murder he is currently researching is the work of a serial killer whose work dates back to the 1960s.");
 
 
-
-
 --
 -- Indexes for table "movies"
 --
