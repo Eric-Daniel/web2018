@@ -26,7 +26,6 @@ if(ISSET($_POST['login'])){
             }
         }
 
-//        echo 'Hello '.($_COOKIE['username']!='' ? $_COOKIE['username'] : 'Admin');
         echo '<script>alert("Successfully login!")</script>';
         echo '<script>window.location = "admin_movie.php"</script>';}
     else{
