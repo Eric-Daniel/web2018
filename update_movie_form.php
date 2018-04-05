@@ -2,7 +2,6 @@
 session_start();
 	$movie_id = $_REQUEST['movie_id'];
 	require_once "./functions/database_functions.php";
-//	require_once 'class.php';
 	$conn = new db_class();
 	 $fetch = $conn->movie_id($movie_id);
 ?>
@@ -33,8 +32,8 @@ session_start();
 	<input type = "file" name = "image" value = "<?php echo $fetch['image']?>" class = "form-control" onblur="imageValidation(this.value,event)" id="img" onchange="imageValidation()"/>
 </div>
 <div class = "form-group">
-	<label>Synopsis</label>
-	<textarea name="synopsis" cols="40" rows="5" ><?php echo $fetch['synopsis']?></textarea>
+	<label style="display: inline-block; vertical-align: top">Synopsis</label>
+	<textarea name="synopsis" cols="50" rows="7" ><?php echo $fetch['synopsis']?></textarea>
 </div>
 
 
