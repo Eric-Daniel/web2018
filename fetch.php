@@ -60,7 +60,6 @@ if($result->num_rows > 0)
     <td>'.$row["year"].'</td>
     <td>'.$row["genre"].'</td>
     <td><img src="./bootstrap/img/'.$row["image"].'" height="268" width="182" <br> <br>'.$row["synopsis"].'</td>
-    <td class="btn btn-space"><center><a class = "btn btn-primary update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch[\'movie_id\']?>"><i class="fa fa-edit"></i> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch[\'movie_id\']?>" data-toggle = "modal" data-target="#del_modal"><i class="fa fa-trash"></i> Delete</a></center></td>
    </tr>
   ';
     }
