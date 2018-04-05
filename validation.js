@@ -190,3 +190,21 @@ function usernameValidation(username,ev) {
         }
     }
 }
+
+function validateLoginForm() {
+
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
+
+    if ($.trim(username).length === 0){
+        alert("Username must be filled out!");
+        return false;
+    }
+
+    if (password.length === 0)
+    {
+        alert("Password must be filled out!");
+        return false;
+    }
+
+}

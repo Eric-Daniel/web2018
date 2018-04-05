@@ -11,7 +11,7 @@ require_once "./template/header.php";
 
 <body>
 <div class="container">
-    <form name="loginForm" class="form-horizontal" role="form" method="POST" action="login_query.php" onsubmit='return validateForm()'>
+    <form name="loginForm" class="form-horizontal" role="form" method="POST" action="login_query.php" onsubmit='return validateLoginForm()'>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
