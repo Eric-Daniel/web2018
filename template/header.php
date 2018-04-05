@@ -25,7 +25,7 @@
         <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
             <div class="container">
 			<a class="navbar-brand"
-                href="index.php">AAA Library Store</a>
+                href="index.php"><i class="fa fa-film"></i> AAA Movie Library Store</a>
                 <button type="button" class="collapse navbar-collapse" data-toggle="collapse"
                 data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span>
 &#x2630;</button> 
@@ -33,9 +33,9 @@
                 <div>
                     <ul class="nav navbar-nav ml-auto">
                         <!-- link to admin.php -->
-                        <li class="nav-item"><a href="admin.php" class="nav-link"><i class="fa fa-lock"></i>&nbsp; Admin_Login</a>
+                        <li class="nav-item"><a href="admin.php" class="nav-link"><i class="fa fa-lock"></i>&nbsp; Administration_Login</a>
                         </li>
-                        <!-- link to movies.php -->
+                        <!-- link to index.php -->
                         <li class="nav-item"><a href="index.php" class="nav-link"><i class="fa fa-home"></i>&#xA0; Home</a>
                         </li>
                     </ul>
@@ -47,7 +47,7 @@
             <div style="float: left; background-color:#71746c; width:100%">
             <div class="container">
                <marquee><h1 style="font-family: 'Tangerine', serif;
-        font-size: 70px; width:100%">Welcome to online AAA Library Store</h1></marquee>
+        font-size: 70px; width:100%">Welcome to online AAA Movie Library Store</h1></marquee>
                 <br>
             </div>
         </div>
