@@ -13,19 +13,19 @@ session_start();
 </head>
 <body>
 
-
 <div class = "form-group">
 	<label>Title</label>
-	<input type = "text" name = "title" value = "<?php echo $fetch['title']?>" class = "form-control"  onblur="titleValidation(this.value,event)"/>
+	<input type = "text" name = "title" value = "<?php echo $fetch['title']?>" class = "form-control"/>
 	<input type = "hidden" name = "movie_id" value = "<?php echo $movie_id?>" />
 </div>
 <div class = "form-group">
 	<label>Year</label>
-	<input type = "text" name = "year" value = "<?php echo $fetch['year']?>" class = "form-control" onblur="yearValidation(this.value,event)"/>
+	<input type = "text" name = "year" value = "<?php echo $fetch['year']?>" class = "form-control"  onblur="yearValidation(this.value,event)"
+           onkeypress="yearValidation(this.value,event)"/>
 </div>
 <div class = "form-group">
 	<label>Genre</label>
-	<input type = "text" name = "genre" value = "<?php echo $fetch['genre']?>" class = "form-control" onblur="genreValidation(this.value,event)"/>
+	<input type = "text" name = "genre" value = "<?php echo $fetch['genre']?>" class = "form-control" />
 </div>
 <div class = "form-group">
 	<label>Image</label>

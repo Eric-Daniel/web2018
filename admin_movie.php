@@ -125,8 +125,7 @@ require_once 'session.php';
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<h3 class = "text-success modal-title">Update Movie</h3>
 		</div>
-		<form method = "POST" action = "admin_update.php">
-<!--		<form name="createForm" method = "POST" action = "admin_update.php" onsubmit='return validateForm()'>-->
+		<form name="UpdateForm" method = "POST" action = "admin_update.php" onsubmit='return validateUpdateForm()'>
 		<div class="modal-body update">
 			
       </div>

@@ -51,7 +51,8 @@
 			<tr>
 				<th>Year</th>
 
-                <td><input type="text" name="year"></td>
+                <td><input type="text" name="year" onblur="yearValidation(this.value,event)"
+                           onkeypress="yearValidation(this.value,event)"></td>
 			</tr>
 			<tr>
 				<th>Genre</th>

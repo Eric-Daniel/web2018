@@ -72,10 +72,40 @@ function yearValidation(year,ev) {
     }
 }
 
-// function yearValidation(year,ev) {
+function yearValidation2(year,ev) {
+
+    var text = /^[0-9]+$/;
+    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
+        if (year != 0) {
+            if ((year != "") && (!text.test(year))) {
+
+                alert("Please Enter Numeric Values Only");
+                return false;
+            }
+
+            if (year.length != 4) {
+                alert("Year is not proper. Please check");
+                return false;
+            }
+            var current_year=new Date().getFullYear();
+            if((year < 1920) || (year > current_year))
+            {
+                alert("Year should be in range 1920 to current year");
+                return false;
+            }
+            return true;
+        } }
+     else if (year.length ===0)
+    {
+        alert("EmptyYear is not proper. Please check");
+        return false;
+    }
+}
+
+// function yearValidation2(year,ev) {
 //
 //     var text = /^[0-9]+$/;
-//     var current_year=new Date().getFullYear();
+//
 //     if(ev.type=="blur" || year.length===0 || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
 //         if (year.length ===0)
 //         {
@@ -90,12 +120,12 @@ function yearValidation(year,ev) {
 //                 return false;
 //             }
 //
-//             // if (year.length != 4) {
-//             //     alert("Year is not proper. Please check");
-//             //     return false;
-//             // }
+//             if (year.length != 4) {
+//                 alert("Year is not proper. Please check");
+//                 return false;
+//             }
 //
-//
+//             var current_year=new Date().getFullYear();
 //             else if((year < 1960) || (year > current_year))
 //             {
 //                 alert("Year should be in range 1960 to current year");
@@ -106,6 +136,31 @@ function yearValidation(year,ev) {
 //
 //     }
 // }
+
+function yearValidation(year,ev) {
+
+    var text = /^[0-9]+$/;
+    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
+        if (year != 0) {
+            if ((year != "") && (!text.test(year))) {
+
+                alert("Please Enter Numeric Values Only");
+                return false;
+            }
+
+            if (year.length != 4) {
+                alert("Year is not proper. Please check");
+                return false;
+            }
+            var current_year=new Date().getFullYear();
+            if((year < 1960) || (year > current_year))
+            {
+                alert("Year should be in range 1960 to current year");
+                return false;
+            }
+            return true;
+        } }
+}
 
 function genreValidation(genre,ev) {
 
@@ -204,6 +259,41 @@ function validateLoginForm() {
     if (password.length === 0)
     {
         alert("Password must be filled out!");
+        return false;
+    }
+
+}
+
+function validateUpdateForm() {
+
+    var title = document.forms["UpdateForm"]["title"].value;
+    var year = document.forms["UpdateForm"]["year"].value;
+    var genre = document.forms["UpdateForm"]["genre"].value;
+    var image = document.forms["UpdateForm"]["image"].value;
+    var synopsis = document.forms["UpdateForm"]["synopsis"].value;
+
+    if (title == "") {
+        alert("Title must be filled out");
+        return false;
+    }
+
+    if (year == "") {
+        alert("Year must be filled out");
+        return false;
+    }
+
+    if (genre == "") {
+        alert("Genre must be filled out");
+        return false;
+    }
+
+    if (image == "") {
+        alert("Image must be filled out");
+        return false;
+    }
+
+    if (synopsis == "") {
+        alert("Synopsis must be filled out");
         return false;
     }
 

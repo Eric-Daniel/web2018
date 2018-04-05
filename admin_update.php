@@ -5,10 +5,10 @@ session_start();
 	require_once "./functions/database_functions.php";
 	$conn = new db_class();
 	if(isset($_POST['update'])){
-	$title = $_POST['title'];
-	$year = $_POST['year'];
-	$genre = $_POST['genre'];
-	$synopsis = $_POST['synopsis'];
+	$title = trim($_POST['title']);
+	$year = intval(trim($_POST['year']));
+	$genre = trim($_POST['genre']);
+	$synopsis = trim($_POST['synopsis']);
 	
 //	if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
 //		$image = $_FILES['image']['name'];
