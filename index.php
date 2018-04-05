@@ -6,7 +6,7 @@
 <!--<div style="float: left; background-color:#bdc1b6; width:100%">-->
 <div style="float: left; background-color:#71746c; width:100%">
 <div class="container">
-    <h5><button onclick="myFunction()">Reload page/Back</button></h5>
+    <h5><button onclick="myFunction()" class="btn btn-warning">Reset Filters To Default</button></h5>
 
     <script>
         function myFunction() {
