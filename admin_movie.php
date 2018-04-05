@@ -99,7 +99,8 @@ require_once 'session.php';
 			<td><?php echo $fetch['title']; ?></td>
 			<td><?php echo $fetch['year']; ?></td>
 			<td><?php echo $fetch['genre']; ?></td>
-			<td><img src="./bootstrap/img/<?php echo $fetch['image'];?> "> <br> <?php echo $fetch['synopsis']; ?> </td> <!-- able display larger image above desc-->
+			<td><?php echo '<img src="./bootstrap/img/' . $fetch['image'] . '" height="268" width="182"> '; ?> <br> <?php echo $fetch['synopsis']; ?> </td> <!-- able display larger image above desc-->
+
 			<td><center><a class = "btn btn-warning update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch['movie_id']?>"><span class = "glyphicon glyphicon-edit"></span> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch['movie_id']?>" data-toggle = "modal" data-target="#del_modal"><span class = "glyphicon glyphicon-trash"></span> Delete</a></center></td>
 		</tr>
 		<?php } ?>
