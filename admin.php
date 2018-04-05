@@ -27,7 +27,7 @@ require_once "./template/header.php";
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                         <input type="text" name="username" class="form-control" id="username"
-                               placeholder="Username" onblur="usernameValidation(this.username,event)">
+                               placeholder="Username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" onblur="usernameValidation(this.username,event)">
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ require_once "./template/header.php";
                     <label class="sr-only" for="password">Password</label>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                        <input type="password" name="password" class="form-control" id="password"
+                        <input type="password" name="password" class="form-control" id="password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>"
                                placeholder="Password">
                     </div>
                 </div>
@@ -51,7 +51,7 @@ require_once "./template/header.php";
                 <div class="form-check mb-2 mr-sm-2 mb-sm-0">
                     <label class="form-check-label">
                         <input class="form-check-input" name="remember"
-                               type="checkbox" >
+                               type="checkbox" <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?>>
                         <span style="padding-bottom: .15rem">Remember me</span>
                     </label>
                 </div>
