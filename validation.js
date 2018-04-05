@@ -72,6 +72,19 @@ function yearValidation(year,ev) {
     }
 }
 
+function titleValidation1(year,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || title.length===0 ) {
+
+        if (title.length ===0)
+        {
+            alert("EmptyYear  is not proper. Please check");
+            return false;
+        }
+    }
+}
+
 // function yearValidation(year,ev) {
 //
 //     var text = /^[0-9]+$/;
