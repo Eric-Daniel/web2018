@@ -27,8 +27,9 @@ session_start();
 	<input type = "text" name = "genre" value = "<?php echo $fetch['genre']?>" class = "form-control" />
 </div>
 <div class = "form-group">
-	<label>Image:</label>
-<!--    <img src="./bootstrap/img/--><?php //echo $fetch['image'];?><!-- ">-->
+	<label>Image: </label>
+    <img src="./bootstrap/img/<?php echo $fetch['image'] . '" height="240" width="162"';?> ">
+    <label style="display: inline-block; vertical-align: bottom; color: orange; font-weight: bold">Note: Current Image Will Be Replaced With Newly Inserted Image</label>
 	<input type = "file" name = "image" value = "<?php echo $fetch['image']?>" class = "form-control" onblur="imageValidation(this.value,event)" id="img" onchange="imageValidation()"/>
 </div>
 <div class = "form-group">
