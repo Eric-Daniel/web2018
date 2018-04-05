@@ -16,7 +16,7 @@ session_start();
 
 <div class = "form-group">
 	<label>Title</label>
-	<input type = "text" name = "title" value = "<?php echo $fetch['title']?>" class = "form-control"  onblur="titleValidation(this.value,event)"/>
+	<input type = "text" name = "title" value = "<?php echo $fetch['title']?>" class = "form-control" onblur="titleValidation(this.value,event)"/>
 	<input type = "hidden" name = "movie_id" value = "<?php echo $movie_id?>" />
 </div>
 <div class = "form-group">

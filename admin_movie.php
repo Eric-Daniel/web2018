@@ -248,9 +248,12 @@ require_once 'session.php';
 		$('.update_movie_id').on('click', function(){
 			$movie_id = $(this).attr('name');
 			$('.update').load('update_movie_form.php?movie_id=' + $movie_id);
+            titleValidation1();
 		});
 	});
 </script>
+
+    <script src="validation.js"></script>
 
 <?php
 

@@ -59,6 +59,20 @@ function titleValidation(title,ev) {
     }
 }
 
+function titleValidation1(title,ev) {
+
+    // var text = /^[0-9]+$/;
+    if(ev.type=="blur" || title.length===0 ) {
+        if (title.length === 0) {
+
+
+            alert("EmptyTitle is not proper. Please check");
+            return false;
+
+        }
+    }
+}
+
 function yearValidation(year,ev) {
 
     // var text = /^[0-9]+$/;
@@ -72,21 +86,7 @@ function yearValidation(year,ev) {
     }
 }
 
-function validateLoginForm() {
-    var username = document.forms["loginForm"]["username"].value;
-    var password = document.forms["loginForm"]["password"].value;
 
-    if (username == "") {
-        alert("Username must be filled out");
-        return false;
-    }
-
-    if (password == "") {
-        alert("Password must be filled out");
-        return false;
-    }
-
-}
 
 // function yearValidation(year,ev) {
 //
@@ -194,15 +194,78 @@ function synopsisValidation(synopsis,ev) {
     }
 }
 
-function usernameValidation(username,ev) {
+// function usernameValidation(username,ev) {
+//
+//     // var text = /^[0-9]+$/;
+//     if(ev.type=="blur" || title.length===0 ) {
+//
+//         if (username.length ===0)
+//         {
+//             alert("EmptyUsername is not proper. Please check");
+//             return false;
+//         }
+//     }
+// }
 
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || title.length===0 ) {
+function validateLoginForm() {
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
 
-        if (username.length ===0)
-        {
-            alert("EmptyUsername is not proper. Please check");
-            return false;
-        }
+    if (username.length === 0) {
+        alert("Username must be filled out");
+        return false;
     }
+
+    if (password.length === 0) {
+        alert("Password must be filled out");
+        return false;
+    }
+
+}
+
+function validateForm() {
+    // var title = document.forms["createForm"]["title"].value;
+    var title = document.forms["createForm"]["title"].value;
+    var year = document.forms["createForm"]["year"].value;
+    var genre = document.forms["createForm"]["genre"].value;
+    var image = document.forms["createForm"]["image"].value;
+    var synopsis = document.forms["createForm"]["synopsis"].value;
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
+
+    if (title == "") {
+        alert("Title must be filled out");
+        return false;
+    }
+
+    if (year == "") {
+        alert("Year must be filled out");
+        return false;
+    }
+
+    if (genre == "") {
+        alert("Genre must be filled out");
+        return false;
+    }
+
+    if (image == "") {
+        alert("Image must be filled out");
+        return false;
+    }
+
+    if (synopsis == "") {
+        alert("Synopsis must be filled out");
+        return false;
+    }
+
+    if (username == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+
+    if (password == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+
 }
