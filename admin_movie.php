@@ -16,7 +16,7 @@ require_once 'session.php';
         <div class="col-md-4">
             <div class="btn-group float-right mt-2" role="group">
                 <a  href="admin_signout.php" class="btn btn-warning btn-md" href="#">
-                    <i aria-hidden="true"></i> Logout </a>
+                    <i aria-hidden="true"></i><i class="fa fa-sign-out"></i> Logout </a>
             </div>
         </div>
     </section>
@@ -100,7 +100,7 @@ require_once 'session.php';
 			<td><?php echo $fetch['year']; ?></td>
 			<td><?php echo $fetch['genre']; ?></td>
 			<td><?php echo '<img src="./bootstrap/img/' . $fetch['image'] . '" height="268" width="182"> '; ?> <br> <?php echo $fetch['synopsis']; ?> </td>
-			<td><center><a class = "btn btn-warning update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch['movie_id']?>"><span class = "glyphicon glyphicon-edit"></span> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch['movie_id']?>" data-toggle = "modal" data-target="#del_modal"><span class = "glyphicon glyphicon-trash"></span> Delete</a></center></td>
+			<td class="btn btn-space"><center><a class = "btn btn-primary update_movie_id" data-toggle = "modal" data-target = "#update_modal" name = "<?php echo $fetch['movie_id']?>"><i class="fa fa-edit"></i> Update</a> | <a class = "btn btn-danger delete_movie_id" name = "<?php echo $fetch['movie_id']?>" data-toggle = "modal" data-target="#del_modal"><i class="fa fa-trash"></i> Delete</a></center></td>
 		</tr>
 		<?php } ?>
     </table> </div>
@@ -112,8 +112,8 @@ require_once 'session.php';
 		<center><h4 class = "text-danger">Are you sure you want to delete this record?</h4></center>
       </div>
       <div class="modal-footer">
-        <button type = "button" class="btn btn-warning" data-dismiss="modal"><span class = "glyphicon glyphicon-remove"></span> No</button>
-        <button type = "button" class="btn btn-danger del_movie"><span class = "glyphicon glyphicon-trash"></span> Yes</button>
+        <button type = "button" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-times"></i>No</button>
+        <button type = "button" class="btn btn-danger del_movie"><i class="fas fa-trash-alt"></i> Yes</button>
       </div>
     </div>
   </div>
@@ -130,7 +130,7 @@ require_once 'session.php';
 			
       </div>
       <div class="modal-footer">
-        <button class="btn btn-warning" name = "update"><span class = "glyphicon glyphicon-edit"></span> Save Changes</button>
+        <button class="btn btn-warning" name = "update"><i class="fa fa-edit"></i> Save Changes</button>
       </div>
 	  </form>
     </div>
