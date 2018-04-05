@@ -59,7 +59,7 @@ if($result->num_rows > 0)
     <td>'.$row["title"].'</td>
     <td>'.$row["year"].'</td>
     <td>'.$row["genre"].'</td>
-    <td><img src="./bootstrap/img/'.$row["image"].'" <br> <br>'.$row["synopsis"].'</td>
+    <td><img src="./bootstrap/img/'.$row["image"].'" height="268" width="182" <br> <br>'.$row["synopsis"].'</td>
    </tr>
   ';
     }
