@@ -183,12 +183,12 @@ require_once 'session.php';
             }
         });
 
-        function find_movie_by_genre(genre_selected) //pass in yearSelected para
+        function find_movie_by_genre(genre_selected)
         {
             $.ajax({
                 url:"fetch.php",
                 method:"POST",
-                data:{query:genre_selected}, //pass in year_selected para
+                data:{query:genre_selected},
                 success:function(data)
                 {
                     $('#result').html(data);

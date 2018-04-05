@@ -34,51 +34,6 @@ function validateForm() {
 
 }
 
-function yearValidation(year,ev) {
-
-    var text = /^[0-9]+$/;
-    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
-        if (year != 0) {
-            if ((year != "") && (!text.test(year))) {
-
-                alert("Please Enter Numeric Values Only");
-                return false;
-            }
-
-            if (year.length != 4) {
-                alert("Year is not proper. Please check");
-                return false;
-            }
-            var current_year=new Date().getFullYear();
-            if((year < 1960) || (year > current_year))
-            {
-                alert("Year should be in range 1960 to current year");
-                return false;
-            }
-            return true;
-        } }
-}
-
-function imageValidation() {
-    var formData = new FormData();
-
-    var file = document.getElementById("img").files[0];
-
-    formData.append("Filedata", file);
-    var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
-        alert('Please select a valid image file');
-        document.getElementById("img").value = '';
-        return false;
-    }
-    if (file.size > 1024000) {
-        alert('Max Upload size is 1MB only');
-        document.getElementById("img").value = '';
-        return false;
-    }
-    return true;
-}
-
 function validateLoginForm() {
 
     var username = document.forms["loginForm"]["username"].value;
@@ -130,4 +85,49 @@ function validateUpdateForm() {
         return false;
     }
 
+}
+
+function yearValidation(year,ev) {
+
+    var text = /^[0-9]+$/;
+    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
+        if (year != 0) {
+            if ((year != "") && (!text.test(year))) {
+
+                alert("Please Enter Numeric Values Only");
+                return false;
+            }
+
+            if (year.length != 4) {
+                alert("Year is not proper. Please check");
+                return false;
+            }
+            var current_year=new Date().getFullYear();
+            if((year < 1960) || (year > current_year))
+            {
+                alert("Year should be in range 1960 to current year");
+                return false;
+            }
+            return true;
+        } }
+}
+
+function imageValidation() {
+    var formData = new FormData();
+
+    var file = document.getElementById("img").files[0];
+
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img").value = '';
+        return false;
+    }
+    if (file.size > 1024000) {
+        alert('Max Upload size is 1MB only');
+        document.getElementById("img").value = '';
+        return false;
+    }
+    return true;
 }

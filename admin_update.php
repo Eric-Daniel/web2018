@@ -1,6 +1,5 @@
 <?php 
-session_start();
-
+	session_start();
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 	$conn = new db_class();
@@ -9,14 +8,6 @@ session_start();
 	$year = intval(trim($_POST['year']));
 	$genre = trim($_POST['genre']);
 	$synopsis = trim($_POST['synopsis']);
-	
-//	if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
-//		$image = $_FILES['image']['name'];
-//		$directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
-//		$uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "bootstrap/img/";
-//		$uploadDirectory .= $image;
-//		move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
-//	}
 
 	$conn->update();
 		
@@ -26,7 +17,7 @@ session_start();
 		';
 	}	
 ?>
-<?php
 
+<?php
 	require "./template/footer.php"
 ?>

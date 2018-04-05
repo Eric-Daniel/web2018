@@ -8,12 +8,9 @@ if(ISSET($_POST['login'])){
     $get_user = $conn->login($username, $password);
 
     if($get_user['count'] > 0){
-        //    session_start();
+
         $_SESSION['username'] = $get_user['username'];
-        //  $_SESSION['last_time']= time();
-        //   $_SESSION["timeout"] = time();
-        //   $_SESSION['LAST_ACTIVITY'] = $time;
-        //  $_SESSION['timeout']=time();
+
         $username = 'admin';
         $_SESSION["username"]= $get_user["username"];
 
@@ -28,14 +25,7 @@ if(ISSET($_POST['login'])){
                 setcookie ("password","");
             }
         }
-//                    $_SESSION['start'] = time(); // Taking now logged in time.
-        // Ending a session in 30 minutes from the starting time.
-//                        $_SESSION['expire'] = $_SESSION['start'] + (10);
-//                        header('Location: admin_movie.php');
 
-
-//        setcookie('username',$username,time() + (86400 * 7)); // 86400 = 1 day
-//        setcookie('username',$username,time() + (8)); // 86400 = 1 day
 //        echo 'Hello '.($_COOKIE['username']!='' ? $_COOKIE['username'] : 'Admin');
         echo '<script>alert("Successfully login!")</script>';
         echo '<script>window.location = "admin_movie.php"</script>';}

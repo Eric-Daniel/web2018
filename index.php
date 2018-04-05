@@ -3,7 +3,7 @@
   require_once "./template/header.php";
   require_once "./functions/database_functions.php";
 ?>
-<!--<div style="float: left; background-color:#bdc1b6; width:100%">-->
+
 <div style="float: left; background-color:#71746c; width:100%">
 <div class="container">
     <h5><button onclick="myFunction()" class="btn btn-warning">Reset Filters To Default</button></h5>
@@ -24,7 +24,7 @@
                         $conn = new db_class();
 
                         $filter = $conn->filter();
-                        //           ($stmt = $conn->query("$query"));
+
                         while($fetch = $filter->fetch_array()){
                             ?>
                             <option value=<?php echo $fetch['year']; ?>><?php echo $fetch['year']; ?></option>

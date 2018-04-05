@@ -24,14 +24,11 @@
 			move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
 		}
 
-
-
 		$conn = new db_class();
 		$conn->create($title, $year, $genre, $image, $synopsis);		
 		header("Location: admin_movie.php");
 		
 	}
-
 
 ?>
     <html>
@@ -40,7 +37,6 @@
 
     </head>
     <body>
-
 
 	<form name="createForm" form method="post" action="admin_add.php" onsubmit='return validateForm()' enctype="multipart/form-data">
 		<table class="table">
@@ -73,14 +69,12 @@
         <br>
 		<button><input type="reset" value="Cancel" class="btn btn-warning"></button>
         <button ><i class="fa fa-backward"></i><a class="btn btn-warning" href="admin_movie.php">Back</a></button>
-<!--        <a class="btn btn-link" href="admin_movie.php">Back</a>-->
 	</form>
 	<br/>
     <br>
     <br>
     <br>
+
 <?php
-
 	require_once "./template/footer.php";
-
 ?>
