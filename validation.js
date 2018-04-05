@@ -72,6 +72,22 @@ function yearValidation(year,ev) {
     }
 }
 
+function validateLoginForm() {
+    var username = document.forms["loginForm"]["username"].value;
+    var password = document.forms["loginForm"]["password"].value;
+
+    if (username == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+
+    if (password == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+
+}
+
 // function yearValidation(year,ev) {
 //
 //     var text = /^[0-9]+$/;
