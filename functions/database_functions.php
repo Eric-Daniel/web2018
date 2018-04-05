@@ -30,7 +30,7 @@ class db_class extends db_connect{
 
     public function filter(){
 
-        $stmt = $this->conn->prepare("SELECT DISTINCT year FROM movies") or die($this->conn->error);
+        $stmt = $this->conn->prepare("SELECT DISTINCT year FROM movies ORDER BY year DESC") or die($this->conn->error);
         if($stmt->execute()){
 			$result = $stmt->get_result();
             $stmt->close();
@@ -41,7 +41,7 @@ class db_class extends db_connect{
 
     public function filterGenre(){
 
-        $stmt = $this->conn->prepare("SELECT DISTINCT genre FROM movies") or die($this->conn->error);
+        $stmt = $this->conn->prepare("SELECT DISTINCT genre FROM movies ORDER BY genre ASC") or die($this->conn->error);
         if($stmt->execute()){
             $result = $stmt->get_result();
             $stmt->close();
