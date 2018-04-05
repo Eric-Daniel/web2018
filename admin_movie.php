@@ -1,9 +1,10 @@
 <?php
-    require_once 'session.php';
-	require_once "./functions/admin.php";
+require_once 'session.php';
+
 	$title = "Administration Section";
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
+
 ?>
 
 <div style="float: left; background-color:#71746c; width:100%">

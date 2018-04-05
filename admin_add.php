@@ -1,7 +1,5 @@
 <?php
 	session_start();
-
-	require_once "./functions/admin.php";
 	$title = "Administration Section";
 	require "./template/header.php";
 	require "./functions/database_functions.php";

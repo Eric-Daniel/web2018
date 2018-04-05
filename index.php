@@ -56,10 +56,7 @@
                 <span class="input-group-text" id="basic-addon1">SEARCH</span>
             </div>
             <input type="text" name="search_text" id="search_text" class="form-control" placeholder="Search By Title, Year or Genre" aria-label="SEARCH" aria-describedby="basic-addon1">
-
         </div>
-
-
         <div class="form-group">
             <div id="result" style="position:absolute;background-color:#c5faff;"></div>
         </div>
@@ -173,9 +170,7 @@
             }
         });
 
-
     });
-
 </script>
 
 <?php
