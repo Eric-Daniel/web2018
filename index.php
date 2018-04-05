@@ -1,5 +1,5 @@
 <?php
-  $title = "Index";
+  $title = "Home";
   require_once "./template/header.php";
   require_once "./functions/database_functions.php";
 ?>
