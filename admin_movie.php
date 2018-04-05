@@ -25,7 +25,7 @@ require_once 'session.php';
   <p  style="text-align:right" class="lead"><a  href="admin_add.php" class="btn btn-primary btn-md" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i> Add New Movie </a></p>
 <div class="container">
-    <h5><button onclick="myFunction()">Reload page/Back</button></h5>
+    <h5><button onclick="myFunction()" class="btn btn-warning">Reset Filters To Default</button></h5>
     <script>
         function myFunction() {
             location.reload();
