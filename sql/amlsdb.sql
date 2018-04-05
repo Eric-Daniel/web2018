@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS movies (
 INSERT INTO movies(title, year, genre, image, synopsis) VALUES
 ("Pacific Rim Uprising",2018, "Action","pacificRimUprising.jpg","Jake Pentecost, son of Stacker Pentecost, reunites with Mako Mori to lead a new generation of Jaeger pilots, including rival Lambert and 15-year-old hacker Amara, against a new Kaiju threat."),
 ("Early Man",2018,"Animation","earlyman.jpg","Set at the dawn of time, when prehistoric creatures and woolly mammoths roamed the earth, Early Man tells the story of Dug, along with sidekick Hognob as they unite his tribe against a mighty enemy Lord Nooth and his Bronze Age City to save their home."),
-("Aiyaary",2018,"Crime","aiyaary.jpg","Two officers with patriotic hearts suddenly have a fallout. The mentor, Colonel Abhay Singh has complete faith in the country's system while protégé Major Jai Bakshi thinks differently due to a recent stint in surveillance."),
+("Aiyaary",2018,"Crime","aiyaary.jpg","Two officers with patriotic hearts suddenly have a fallout. The mentor, Colonel Abhay Singh has complete faith in the country's system while protege Major Jai Bakshi thinks differently due to a recent stint in surveillance."),
 ("Black Panther",2018,"Science-Fiction","blackPanther.jpg","T'Challa, the King of Wakanda, rises to the throne in the isolated, technologically advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake."),
 ("The Monkey King 3",2018,"Fantasy","theMonkeyKing3.jpg","A travelling monk and his followers find themselves trapped in a land inhabited by only women."),
 ("Annihilation",2018,"Fantasy","annihilation.jpg","A biologist signs up for a dangerous, secret expedition into a mysterious zone where the laws of nature don't apply."),
@@ -77,11 +77,6 @@ INSERT INTO movies(title, year, genre, image, synopsis) VALUES
 ("The Hunger Games",2012,"Sci-Fi","theHungerGames.jpg","Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death."),
 ("Sinister",2012,"Horror","sinister.jpg","Washed-up true-crime writer Ellison Oswalt finds a box of super 8 home movies that suggest the murder he is currently researching is the work of a serial killer whose work dates back to the 1960s.");
 
-
---
--- Indexes for table "movies"
---
-ALTER TABLE movies
  
 
 
