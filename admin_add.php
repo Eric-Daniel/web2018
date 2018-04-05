@@ -2,7 +2,7 @@
 	session_start();
 
 	require_once "./functions/admin.php";
-	$title = "Add new movie";
+	$title = "Administration Section";
 	require "./template/header.php";
 	require "./functions/database_functions.php";
 
@@ -67,10 +67,17 @@
 			</tr>
 			
 		</table>
-		<input type="submit" name="add" value="Add new movie" class="btn btn-primary">
-		<input type="reset" value="cancel" class="btn btn-default">
+		<input type="submit" name="add" value="Confirm Add New Movie" class="btn btn-success">
+        <br>
+        <br>
+		<button><input type="reset" value="Cancel" class="btn btn-warning"></button>
+        <button ><i class="fa fa-backward"></i><a class="btn btn-warning" href="admin_movie.php">Back</a></button>
+<!--        <a class="btn btn-link" href="admin_movie.php">Back</a>-->
 	</form>
 	<br/>
+    <br>
+    <br>
+    <br>
 <?php
 
 	require_once "./template/footer.php";

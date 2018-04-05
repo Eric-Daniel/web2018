@@ -2,7 +2,7 @@
 require_once 'session.php';
 
 	require_once "./functions/admin.php";
-	$title = "List Movie";
+	$title = "Administration Section";
 	require_once "./template/header.php";
 	require_once "./functions/database_functions.php";
 
@@ -15,7 +15,7 @@ require_once 'session.php';
         </div>
         <div class="col-md-4">
             <div class="btn-group float-right mt-2" role="group">
-                <a  href="admin_signout.php" class="btn btn-primary btn-md" href="#">
+                <a  href="admin_signout.php" class="btn btn-warning btn-md" href="#">
                     <i aria-hidden="true"></i> Logout </a>
             </div>
         </div>
