@@ -27,7 +27,7 @@ require_once "./template/header.php";
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
                         <input type="text" name="username" class="form-control" id="username"
-                               placeholder="Username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" onblur="usernameValidation(this.username,event)">
+                               placeholder="Username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" >
                     </div>
                 </div>
             </div>

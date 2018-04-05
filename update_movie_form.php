@@ -34,7 +34,7 @@ session_start();
 </div>
 <div class = "form-group">
 	<label>Synopsis</label>
-	<textarea name="synopsis" cols="40" rows="5" onblur="synopsisValidation(this.value,event)"><?php echo $fetch['synopsis']?></textarea>
+	<textarea name="synopsis" cols="40" rows="5" ><?php echo $fetch['synopsis']?></textarea>
 </div>
 
 

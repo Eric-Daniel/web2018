@@ -1,26 +1,24 @@
 
 function validateForm() {
-   // var title = document.forms["createForm"]["title"].value;
+
     var title = document.forms["createForm"]["title"].value;
     var year = document.forms["createForm"]["year"].value;
     var genre = document.forms["createForm"]["genre"].value;
     var image = document.forms["createForm"]["image"].value;
     var synopsis = document.forms["createForm"]["synopsis"].value;
-    var username = document.forms["loginForm"]["username"].value;
-    var password = document.forms["loginForm"]["password"].value;
 
-    if (title == "") {
-        alert("Title must be filled out");
+    if ($.trim(title).length === 0){
+        alert("Title must be filled out!");
         return false;
     }
 
-    if (year == "") {
-        alert("Year must be filled out");
+    if ($.trim(year).length === 0){
+        alert("Year must be filled out!");
         return false;
     }
 
-    if (genre == "") {
-        alert("Genre must be filled out");
+    if ($.trim(genre).length === 0){
+        alert("Genre must be filled out!");
         return false;
     }
 
@@ -29,113 +27,12 @@ function validateForm() {
         return false;
     }
 
-    if (synopsis == "") {
-        alert("Synopsis must be filled out");
-        return false;
-    }
-
-    if (username == "") {
-        alert("Username must be filled out");
-        return false;
-    }
-
-    if (password == "") {
-        alert("Password must be filled out");
+    if ($.trim(synopsis).length === 0){
+        alert("Synopsis must be filled out!");
         return false;
     }
 
 }
-
-function titleValidation(title,ev) {
-
-   // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || title.length===0 ) {
-
-        if (title.length ===0)
-        {
-            alert("EmptyTitle is not proper. Please check");
-            return false;
-        }
-    }
-}
-
-function yearValidation(year,ev) {
-
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || year.length===0 ) {
-
-        if (year.length ===0)
-        {
-            alert("EmptyYear  is not proper. Please check");
-            return false;
-        }
-    }
-}
-
-function yearValidation2(year,ev) {
-
-    var text = /^[0-9]+$/;
-    if(ev.type=="blur" || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
-        if (year != 0) {
-            if ((year != "") && (!text.test(year))) {
-
-                alert("Please Enter Numeric Values Only");
-                return false;
-            }
-
-            if (year.length != 4) {
-                alert("Year is not proper. Please check");
-                return false;
-            }
-            var current_year=new Date().getFullYear();
-            if((year < 1920) || (year > current_year))
-            {
-                alert("Year should be in range 1920 to current year");
-                return false;
-            }
-            return true;
-        } }
-     else if (year.length ===0)
-    {
-        alert("EmptyYear is not proper. Please check");
-        return false;
-    }
-}
-
-// function yearValidation2(year,ev) {
-//
-//     var text = /^[0-9]+$/;
-//
-//     if(ev.type=="blur" || year.length===0 || year.length==4 && ev.keyCode!=8 && ev.keyCode!=46) {
-//         if (year.length ===0)
-//         {
-//             alert("EmptyYear is not proper. Please check");
-//             return false;
-//         }
-//         else
-//         if (year != 0) {
-//             if ((year != "") && (!text.test(year))) {
-//
-//                 alert("Please Enter Numeric Values Only");
-//                 return false;
-//             }
-//
-//             if (year.length != 4) {
-//                 alert("Year is not proper. Please check");
-//                 return false;
-//             }
-//
-//             var current_year=new Date().getFullYear();
-//             else if((year < 1960) || (year > current_year))
-//             {
-//                 alert("Year should be in range 1960 to current year");
-//                 return false;
-//             }
-//             return true;
-//         }
-//
-//     }
-// }
 
 function yearValidation(year,ev) {
 
@@ -162,44 +59,6 @@ function yearValidation(year,ev) {
         } }
 }
 
-function genreValidation(genre,ev) {
-
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || genre.length===0 ) {
-
-        if (genre.length ===0)
-        {
-            alert("EmptyGenre is not proper. Please check");
-            return false;
-        }
-    }
-}
-
-function imageValidation(image,ev) {
-
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || image.length===0 ) {
-
-        if (image.length ===0)
-        {
-            alert("EmptyImage is not proper. Please check");
-            return false;
-        }
-    }
-}
-
-// function yearValidation1(year) {
-//
-//    // var text = /^[0-9]+$/;
-//     if(year.length===null ) {
-//
-//             if (year.length ===null) {
-//                 alert("EmptyYear is not proper. Please check");
-//                 return false;
-//             }
-//           }
-// }
-
 function imageValidation() {
     var formData = new FormData();
 
@@ -218,32 +77,6 @@ function imageValidation() {
         return false;
     }
     return true;
-}
-
-function synopsisValidation(synopsis,ev) {
-
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || synopsis.length===0 ) {
-
-        if (synopsis.length ===0)
-        {
-            alert("EmptySynopsis is not proper. Please check");
-            return false;
-        }
-    }
-}
-
-function usernameValidation(username,ev) {
-
-    // var text = /^[0-9]+$/;
-    if(ev.type=="blur" || title.length===0 ) {
-
-        if (username.length ===0)
-        {
-            alert("EmptyUsername is not proper. Please check");
-            return false;
-        }
-    }
 }
 
 function validateLoginForm() {
@@ -272,18 +105,18 @@ function validateUpdateForm() {
     var image = document.forms["UpdateForm"]["image"].value;
     var synopsis = document.forms["UpdateForm"]["synopsis"].value;
 
-    if (title == "") {
-        alert("Title must be filled out");
+    if ($.trim(title).length === 0){
+        alert("Title must be filled out!");
         return false;
     }
 
-    if (year == "") {
-        alert("Year must be filled out");
+    if ($.trim(year).length === 0){
+        alert("Year must be filled out!");
         return false;
     }
 
-    if (genre == "") {
-        alert("Genre must be filled out");
+    if ($.trim(genre).length === 0){
+        alert("Genre must be filled out!");
         return false;
     }
 
@@ -292,8 +125,8 @@ function validateUpdateForm() {
         return false;
     }
 
-    if (synopsis == "") {
-        alert("Synopsis must be filled out");
+    if ($.trim(synopsis).length === 0){
+        alert("Synopsis must be filled out!");
         return false;
     }
 
